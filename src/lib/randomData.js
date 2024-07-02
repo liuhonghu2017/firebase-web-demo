@@ -2,6 +2,9 @@
 // After you've signed into Friendly Eats, click the dropdown
 // menu in the top right corner and select "Add random data"
 
+// * 模拟餐厅和评价数据包含在 src/lib/randomData.js 文件中。
+// * 该文件中的数据会汇编在 src/lib/fakeRestaurants.js 文件的代码中。
+
 export const randomData = {
 	restaurantNames: [
 		"Savory Bites",

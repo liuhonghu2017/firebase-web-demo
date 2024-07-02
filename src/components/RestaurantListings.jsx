@@ -3,6 +3,9 @@
 // This components handles the restaurant listings page
 // It receives data from src/app/page.jsx, such as the initial restaurants and search params from the URL
 
+// * src/components/RestaurantListings.jsx 文件是一个客户端组件，
+// * 由文件开头的 "use client" 指令表示。
+
 import Link from "next/link";
 import { React, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -77,7 +80,7 @@ export default function RestaurantListings({
 	}, [filters]);
 
 	useEffect(() => {
-		const unsubscribe = getRestaurantsSnapshot(data => {
+		const unsubscribe = getRestaurantsSnapshot((data) => {
 			setRestaurants(data);
 		}, filters);
 
@@ -90,11 +93,8 @@ export default function RestaurantListings({
 		<article>
 			<Filters filters={filters} setFilters={setFilters} />
 			<ul className="restaurants">
-				{restaurants.map(restaurant => (
-					<RestaurantItem
-						key={restaurant.id}
-						restaurant={restaurant}
-					/>
+				{restaurants.map((restaurant) => (
+					<RestaurantItem key={restaurant.id} restaurant={restaurant} />
 				))}
 			</ul>
 		</article>
